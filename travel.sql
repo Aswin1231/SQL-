@@ -1,11 +1,11 @@
-desc BUS1;
+desc BUS;
  Name                                      Null?    Type
  ----------------------------------------- -------- ----------------------------
  BUS_NO                                    NOT NULL VARCHAR2(6)
  SOURCE                                             VARCHAR2(15)
  COUCH_TYPE                                         VARCHAR2(10)
 
-SQL> desc RESERVATION1;
+SQL> desc RESERVATION;
  Name                                      Null?    Type
  ----------------------------------------- -------- ----------------------------
  PNR_NO                                    NOT NULL NUMBER(5)
@@ -17,7 +17,7 @@ SQL> desc RESERVATION1;
  BUS_NO                                             VARCHAR2(6)
  SEAT_NO                                            NUMBER(3)
 
-SQL> desc TICKET111;
+SQL> desc TICKET;
  Name                                      Null?    Type
  ----------------------------------------- -------- ----------------------------
  TICKET_NO                                 NOT NULL NUMBER(5)
@@ -29,7 +29,7 @@ SQL> desc TICKET111;
  DEP_TIME                                           VARCHAR2(10)
  BUS_NO                                             VARCHAR2(6)
 
-SQL> desc PASSENGERS;
+SQL> desc PASSENGER;
  Name                                      Null?    Type
  ----------------------------------------- -------- ----------------------------
  PNR_NO                                    NOT NULL NUMBER(5)
@@ -47,7 +47,7 @@ SQL> desc CANCELLATION;
  SEAT_NO                                            NUMBER(12)
  CONTACT_NO                                         NUMBER(10)
 
-SQL> select * from BUS1;
+SQL> select * from BUS;
 
 BUS_NO SOURCE          COUCH_TYPE                                               
 ------ --------------- ----------                                               
@@ -57,7 +57,7 @@ KL_03  KOCHI           A/C
 KL_04  TRISSUR         NON_A/C                                                  
 KL_05  PALAKKAD        A/C                                                      
 
-SQL> select * from RESERVATION1;
+SQL> select * from RESERVATION;
 
     PNR_NO NAME            JOURNEY_DATE    NO_OF_SEATS ADDRESS                  
 ---------- --------------- --------------- ----------- ---------------          
@@ -84,7 +84,7 @@ CONTACT_NO BUS_NO    SEAT_NO
 9753186420 KL_05          28                                                    
                                                                                 
 
-SQL> select * from TICKET111;
+SQL> select * from TICKET;
 
  TICKET_NO JOURNEY_DATE           AGE SEX        SOURCE     DESTINATION         
 ---------- --------------- ---------- ---------- ---------- ---------------     
@@ -111,7 +111,7 @@ DEP_TIME   BUS_NO
 10:00 AM   KL_05                                                                
                                                                                 
 
-SQL> select * from PASSENGERS;
+SQL> select * from PASSENGER;
 
     PNR_NO  TICKET_NO        AGE SEX        CONTACT_NO NAME                     
 ---------- ---------- ---------- ---------- ---------- ---------------          
@@ -134,7 +134,7 @@ SQL> select * from CANCELLATION;
 
 6 rows selected.
 
-SQL> SELECT TICKET_NO,NAME FROM PASSENGERS;
+SQL> SELECT TICKET_NO,NAME FROM PASSENGER;
 
  TICKET_NO NAME                                                                 
 ---------- ---------------                                                      
@@ -144,14 +144,14 @@ SQL> SELECT TICKET_NO,NAME FROM PASSENGERS;
        114 ALEENA                                                               
        115 HIMA                                                                 
 
-SQL> SELECT * FROM PASSENGERS WHERE SEX='MALE';
+SQL> SELECT * FROM PASSENGER WHERE SEX='MALE';
 
     PNR_NO  TICKET_NO        AGE SEX        CONTACT_NO NAME                     
 ---------- ---------- ---------- ---------- ---------- ---------------          
         10        111         32 MALE       9898675740 JOHN                     
         11        112         31 MALE       7864098760 JOY                      
 
-SQL> SELECT NAME FROM PASSENGERS WHERE AGE>=20 AND AGE<=40;
+SQL> SELECT NAME FROM PASSENGER WHERE AGE>=20 AND AGE<=40;
 
 NAME                                                                            
 ---------------                                                                 
@@ -179,13 +179,13 @@ SQL> SELECT PNR_NO FROM CANCELLATION WHERE JOURNEY_DATE='12-03-2022';
 ----------                                                                      
         21                                                                      
 
-SQL> SELECT COUNT(SEX) FROM TICKET111 WHERE BUS_NO='KL_03' AND SEX='FEMALE';
+SQL> SELECT COUNT(SEX) FROM TICKET WHERE BUS_NO='KL_03' AND SEX='FEMALE';
 
 COUNT(SEX)                                                                      
 ----------                                                                      
          1                                                                      
 
-SQL> SELECT NAME FROM PASSENGERS ORDER BY NAME;
+SQL> SELECT NAME FROM PASSENGER ORDER BY NAME;
 
 NAME                                                                            
 ---------------                                                                 
@@ -195,7 +195,7 @@ JOHN
 JOY                                                                             
 RIYA                                                                            
 
-SQL> SELECT NAME,TICKET_NO FROM PASSENGERS WHERE NAME LIKE 'R%A';
+SQL> SELECT NAME,TICKET_NO FROM PASSENGER WHERE NAME LIKE 'R%A';
 
 NAME             TICKET_NO                                                      
 --------------- ----------                                                      
