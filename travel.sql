@@ -173,14 +173,6 @@ SQL> DESC CANCELLATION;
  SEAT_NO                                            NUMBER(15)
  CONTACT_NO                                         NUMBER(10)
 
-SQL> DELETE FROM BUS1 WHERE BUS_NO='KL_02';
-DELETE FROM BUS1 WHERE BUS_NO='KL_02'
-*
-ERROR at line 1:
-ORA-02292: integrity constraint (DB41.SYS_C005775) violated - child record 
-found 
-
-
 SQL> SELECT PNR_NO FROM CANCELLATION WHERE JOURNEY_DATE='12-03-2022';
 
     PNR_NO                                                                      
