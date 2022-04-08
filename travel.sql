@@ -185,13 +185,6 @@ COUNT(SEX)
 ----------                                                                      
          1                                                                      
 
-SQL> SELECT NAME FROM PASSENGERS ORDERBY NAME;
-SELECT NAME FROM PASSENGERS ORDERBY NAME
-                                    *
-ERROR at line 1:
-ORA-00933: SQL command not properly ended 
-
-
 SQL> SELECT NAME FROM PASSENGERS ORDER BY NAME;
 
 NAME                                                                            
